@@ -23,7 +23,7 @@ MainComponent = __decorate([
         selector: 'app-main',
         templateUrl: '../views/main.html',
         styleUrls: ['../styles/main.css'],
-        providers: [HeroService_1.HeroService, TestService_1.TestService]
+        providers: [HeroService_1.HeroService, TestService_1.LoginService]
     })
 ], MainComponent);
 exports.MainComponent = MainComponent;

@@ -11,22 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var RemoteService_1 = require("./RemoteService");
+var requestUrl_1 = require("../const/requestUrl");
 /**
  * Created by Administrator on 2017/3/29.
  */
-var TestService = (function () {
-    function TestService(remote) {
+var LoginService = (function () {
+    function LoginService(remote, requestUrl) {
         this.remote = remote;
+        this.requestUrl = requestUrl;
     }
-    TestService.prototype.getMessage = function () {
-        // return this.remote.get("http://localhost:8080/daily/test/test1",{});
-        return this.remote.post("http://localhost:8080/daily/test/test2", { name: "liguanghao" }, {});
+    LoginService.prototype.login = function (userName, password) {
+        return this.remote.post(this.requestUrl.getByName('login'), {
+            userName: userName,
+            password: password,
+            ticketId: ''
+        }, {});
     };
-    return TestService;
+    return LoginService;
 }());
-TestService = __decorate([
+LoginService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [RemoteService_1.RemoteService])
-], TestService);
-exports.TestService = TestService;
+    __metadata("design:paramtypes", [RemoteService_1.RemoteService, requestUrl_1.RequestUrl])
+], LoginService);
+exports.LoginService = LoginService;
 //# sourceMappingURL=TestService.js.map

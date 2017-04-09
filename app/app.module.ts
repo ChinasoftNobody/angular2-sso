@@ -9,9 +9,11 @@ import {AppRouterModule} from "./app.router";
 import {MainComponent} from "./daily/component/components/main.component";
 import {HttpModule} from "@angular/http";
 import {HeaderComponent} from "./daily/component/components/header.component";
+import {LoginComponent} from "./daily/component/components/login.component";
+import {FooterComponent} from "./daily/component/components/footer.component";
 @NgModule({
     imports: [BrowserModule, FormsModule,AppRouterModule,HttpModule],
-    declarations: [AppComponent,MainComponent,HeaderComponent],
+    declarations: [AppComponent,MainComponent,HeaderComponent,LoginComponent,FooterComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

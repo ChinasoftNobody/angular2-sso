@@ -17,6 +17,8 @@ var app_router_1 = require("./app.router");
 var main_component_1 = require("./daily/component/components/main.component");
 var http_1 = require("@angular/http");
 var header_component_1 = require("./daily/component/components/header.component");
+var login_component_1 = require("./daily/component/components/login.component");
+var footer_component_1 = require("./daily/component/components/footer.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,7 +27,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_router_1.AppRouterModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent],
+        declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent, login_component_1.LoginComponent, footer_component_1.FooterComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

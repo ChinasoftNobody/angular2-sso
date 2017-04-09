@@ -1,13 +1,18 @@
 import {Injectable} from "@angular/core";
 import {RemoteService} from "./RemoteService";
+import {RequestUrl} from "../const/requestUrl";
 /**
  * Created by Administrator on 2017/3/29.
  */
 @Injectable()
-export class TestService {
-    constructor(private remote:RemoteService){}
-    getMessage() {
-        // return this.remote.get("http://localhost:8080/daily/test/test1",{});
-        return this.remote.post("http://localhost:8080/daily/test/test2",{name:"liguanghao"},{});
+export class LoginService {
+    constructor(private remote:RemoteService,private requestUrl:RequestUrl){}
+
+    login(userName: string, password: string) {
+        return this.remote.post(this.requestUrl.getByName('login'),{
+            userName:userName,
+            password:password,
+            ticketId:''
+        },{})
     }
 }

@@ -2,15 +2,15 @@ import {Component} from "@angular/core";
 import {HeroService} from "../../service/HeroService";
 import {LoginService} from "../../service/TestService";
 /**
- * Created by Administrator on 2017/3/29.
+ * Created by Administrator on 2017/4/9.
  */
 @Component({
     moduleId: module.id,
-    selector: 'app-main',
-    templateUrl: '../views/main.html',
-    styleUrls: ['../styles/main.css'],
+    selector: 'sso-footer',
+    templateUrl: '../views/footer.html',
+    styleUrls: ['../styles/footer.css'],
     providers: [HeroService, LoginService]
 })
-export class MainComponent{
+export class FooterComponent{
 
 }
