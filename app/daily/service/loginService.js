@@ -20,11 +20,11 @@ var LoginService = (function () {
         this.remote = remote;
         this.requestUrl = requestUrl;
     }
-    LoginService.prototype.login = function (userName, password) {
+    LoginService.prototype.login = function (userName, password, ticket) {
         return this.remote.post(this.requestUrl.getByName('login'), {
-            userName: userName,
-            password: password,
-            ticketId: ''
+            userName: userName || '',
+            password: password || '',
+            ticketId: ticket
         }, {});
     };
     return LoginService;
@@ -34,4 +34,4 @@ LoginService = __decorate([
     __metadata("design:paramtypes", [RemoteService_1.RemoteService, requestUrl_1.RequestUrl])
 ], LoginService);
 exports.LoginService = LoginService;
-//# sourceMappingURL=TestService.js.map
+//# sourceMappingURL=loginService.js.map

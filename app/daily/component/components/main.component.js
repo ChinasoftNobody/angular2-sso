@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var HeroService_1 = require("../../service/HeroService");
-var TestService_1 = require("../../service/TestService");
+var loginService_1 = require("../../service/loginService");
 /**
  * Created by Administrator on 2017/3/29.
  */
@@ -23,7 +23,7 @@ MainComponent = __decorate([
         selector: 'app-main',
         templateUrl: '../views/main.html',
         styleUrls: ['../styles/main.css'],
-        providers: [HeroService_1.HeroService, TestService_1.LoginService]
+        providers: [HeroService_1.HeroService, loginService_1.LoginService]
     })
 ], MainComponent);
 exports.MainComponent = MainComponent;

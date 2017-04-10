@@ -11,9 +11,11 @@ import {HttpModule} from "@angular/http";
 import {HeaderComponent} from "./daily/component/components/header.component";
 import {LoginComponent} from "./daily/component/components/login.component";
 import {FooterComponent} from "./daily/component/components/footer.component";
+import {CookieService} from 'angular2-cookie/services/cookies.service';
 @NgModule({
-    imports: [BrowserModule, FormsModule,AppRouterModule,HttpModule],
-    declarations: [AppComponent,MainComponent,HeaderComponent,LoginComponent,FooterComponent],
+    imports: [BrowserModule, FormsModule, AppRouterModule, HttpModule],
+    declarations: [AppComponent, MainComponent, HeaderComponent, LoginComponent, FooterComponent],
+    providers: [CookieService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

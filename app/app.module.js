@@ -19,6 +19,7 @@ var http_1 = require("@angular/http");
 var header_component_1 = require("./daily/component/components/header.component");
 var login_component_1 = require("./daily/component/components/login.component");
 var footer_component_1 = require("./daily/component/components/footer.component");
+var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,6 +29,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_router_1.AppRouterModule, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent, login_component_1.LoginComponent, footer_component_1.FooterComponent],
+        providers: [cookies_service_1.CookieService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
