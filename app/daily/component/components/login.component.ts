@@ -2,8 +2,6 @@ import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../../service/loginService";
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import {CookieKey} from "../../const/cookieKey";
-import {el} from "@angular/platform-browser/testing/browser_util";
-import {debug} from "util";
 /**
  * Created by Administrator on 2017/4/9.
  */

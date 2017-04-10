@@ -1,5 +1,3 @@
-import {HeroService} from "../../service/HeroService";
-import {LoginService} from "../../service/loginService";
 import {Component} from "@angular/core";
 /**
  * Created by Administrator on 2017/4/9.
@@ -9,7 +7,7 @@ import {Component} from "@angular/core";
     selector: 'sso-header',
     templateUrl: '../views/header.html',
     styleUrls: ['../styles/header.css'],
-    providers: [HeroService, LoginService]
+    providers: []
 })
 export class HeaderComponent{
 

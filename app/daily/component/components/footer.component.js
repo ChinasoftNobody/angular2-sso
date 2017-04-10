@@ -7,11 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HeroService_1 = require("../../service/HeroService");
-var loginService_1 = require("../../service/loginService");
-/**
- * Created by Administrator on 2017/4/9.
- */
 var FooterComponent = (function () {
     function FooterComponent() {
     }
@@ -23,7 +18,7 @@ FooterComponent = __decorate([
         selector: 'sso-footer',
         templateUrl: '../views/footer.html',
         styleUrls: ['../styles/footer.css'],
-        providers: [HeroService_1.HeroService, loginService_1.LoginService]
+        providers: []
     })
 ], FooterComponent);
 exports.FooterComponent = FooterComponent;

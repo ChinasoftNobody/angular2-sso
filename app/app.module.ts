@@ -12,10 +12,11 @@ import {HeaderComponent} from "./daily/component/components/header.component";
 import {LoginComponent} from "./daily/component/components/login.component";
 import {FooterComponent} from "./daily/component/components/footer.component";
 import {CookieService} from 'angular2-cookie/services/cookies.service';
+import {RemoteService} from "./daily/service/RemoteService";
 @NgModule({
     imports: [BrowserModule, FormsModule, AppRouterModule, HttpModule],
     declarations: [AppComponent, MainComponent, HeaderComponent, LoginComponent, FooterComponent],
-    providers: [CookieService],
+    providers: [CookieService,RemoteService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

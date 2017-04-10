@@ -8,7 +8,7 @@ import {RequestUrl} from "../../const/requestUrl";
     moduleId:module.id,
     selector: 'my-app',
     templateUrl: '../views/app.html',
-    providers:[RemoteService,RequestUrl]
+    providers:[RequestUrl]
 })
 export class AppComponent{
 }

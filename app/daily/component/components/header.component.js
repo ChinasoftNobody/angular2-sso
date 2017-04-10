@@ -6,8 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var HeroService_1 = require("../../service/HeroService");
-var loginService_1 = require("../../service/loginService");
 var core_1 = require("@angular/core");
 /**
  * Created by Administrator on 2017/4/9.
@@ -23,7 +21,7 @@ HeaderComponent = __decorate([
         selector: 'sso-header',
         templateUrl: '../views/header.html',
         styleUrls: ['../styles/header.css'],
-        providers: [HeroService_1.HeroService, loginService_1.LoginService]
+        providers: []
     })
 ], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;

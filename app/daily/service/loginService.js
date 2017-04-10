@@ -21,9 +21,10 @@ var LoginService = (function () {
         this.requestUrl = requestUrl;
     }
     LoginService.prototype.login = function (userName, password, ticket) {
-        return this.remote.post(this.requestUrl.getByName('login'), {
-            userName: userName || '',
-            password: password || '',
+        var url = this.requestUrl.getByName('login');
+        return this.remote.post(url, {
+            userName: userName,
+            password: password,
             ticketId: ticket
         }, {});
     };
