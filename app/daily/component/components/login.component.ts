@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
     userNameError = false;
     passwordError = false;
 
-    constructor(private loginService: LoginService, private cookie: CookieService) {
+    constructor(private loginService: LoginService,
+                private cookie: CookieService) {
     }
 
     /**

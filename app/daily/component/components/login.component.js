@@ -71,7 +71,8 @@ LoginComponent = __decorate([
         styleUrls: ['../styles/login.css'],
         providers: [loginService_1.LoginService]
     }),
-    __metadata("design:paramtypes", [loginService_1.LoginService, cookies_service_1.CookieService])
+    __metadata("design:paramtypes", [loginService_1.LoginService,
+        cookies_service_1.CookieService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
