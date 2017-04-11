@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../../service/loginService";
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import {CookieKey} from "../../const/cookieKey";
-import {NgLayer} from "../../../common/Dialog";
+import {NgLayer} from "../../../common/dialog/Dialog";
 /**
  * Created by Administrator on 2017/4/9.
  */
