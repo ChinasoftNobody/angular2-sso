@@ -13,13 +13,15 @@ var core_1 = require("@angular/core");
 var loginService_1 = require("../../service/loginService");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var cookieKey_1 = require("../../const/cookieKey");
+var Dialog_1 = require("../../../common/Dialog");
 /**
  * Created by Administrator on 2017/4/9.
  */
 var LoginComponent = (function () {
-    function LoginComponent(loginService, cookie) {
+    function LoginComponent(loginService, cookie, ly) {
         this.loginService = loginService;
         this.cookie = cookie;
+        this.ly = ly;
         this.userNameError = false;
         this.passwordError = false;
     }
@@ -54,7 +56,17 @@ var LoginComponent = (function () {
                 window.location.href = redirectToUrl;
             }
             else {
-                console.error('url is empty');
+                // this.ly.alert({
+                //     title:'url is empty',
+                //     dialogComponent:'sss'
+                // });
+                var confirm_1 = this.ly.confirm({
+                    message: "删除后无法恢复,确定删除吗?"
+                });
+                confirm_1
+                    .ok(function () { return true; })
+                    .cancel(function () { return true; });
+                // alert.ok(()=> {return true;});
             }
         }
         else {
@@ -69,10 +81,11 @@ LoginComponent = __decorate([
         selector: 'sso-login',
         templateUrl: '../views/login.html',
         styleUrls: ['../styles/login.css'],
-        providers: [loginService_1.LoginService]
+        providers: [loginService_1.LoginService, Dialog_1.NgLayer]
     }),
     __metadata("design:paramtypes", [loginService_1.LoginService,
-        cookies_service_1.CookieService])
+        cookies_service_1.CookieService,
+        Dialog_1.NgLayer])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

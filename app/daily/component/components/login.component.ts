@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {LoginService} from "../../service/loginService";
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import {CookieKey} from "../../const/cookieKey";
+import {NgLayer} from "../../../common/Dialog";
 /**
  * Created by Administrator on 2017/4/9.
  */
@@ -10,7 +11,7 @@ import {CookieKey} from "../../const/cookieKey";
     selector: 'sso-login',
     templateUrl: '../views/login.html',
     styleUrls: ['../styles/login.css'],
-    providers: [LoginService]
+    providers: [LoginService, NgLayer]
 })
 export class LoginComponent implements OnInit {
     ngOnInit(): void {
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     passwordError = false;
 
     constructor(private loginService: LoginService,
-                private cookie: CookieService) {
+                private cookie: CookieService,
+                private ly: NgLayer) {
     }
 
     /**
@@ -52,7 +54,17 @@ export class LoginComponent implements OnInit {
             if (redirectToUrl) {
                 window.location.href = redirectToUrl;
             } else {
-                console.error('url is empty');
+                // this.ly.alert({
+                //     title:'url is empty',
+                //     dialogComponent:'sss'
+                // });
+                let confirm = this.ly.confirm({
+                    message:"删除后无法恢复,确定删除吗?"
+                });
+                confirm
+                    .ok(()=> {return true;})
+                    .cancel(()=> {return true;});
+                // alert.ok(()=> {return true;});
             }
         } else {
             console.error(data.result);
