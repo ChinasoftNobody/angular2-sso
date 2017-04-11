@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var loginService_1 = require("../../service/loginService");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var cookieKey_1 = require("../../const/cookieKey");
-var Dialog_1 = require("../../../common/Dialog");
+var Dialog_1 = require("../../../common/dialog/Dialog");
 /**
  * Created by Administrator on 2017/4/9.
  */
