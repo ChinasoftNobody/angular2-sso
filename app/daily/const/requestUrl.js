@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var urls = [
     {
         name: 'login',
-        path: 'http://localhost:8080/sso/login/'
+        path: 'http://192.168.1.7:8080/sso/login/'
     },
     {
         name: '',

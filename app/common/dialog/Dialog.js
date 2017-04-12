@@ -5,6 +5,7 @@
  * @license Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
  * @author cnliangwei@foxmail.com
  */
+///<reference path="../../../node_modules/reflect-metadata/reflect-metadata.d.ts"/>"
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -485,56 +486,56 @@ var NgLayer = (function () {
      * preload template and change selector, for dialog only
      */
     NgLayer.prototype.modifySelector_ = function (clazz, contentSelector) {
-        var _this = this;
-        debugger;
-        if (!(Reflect && Reflect.getOwnMetadata)) {
+        return new Promise(function (resolve, reject) {
+            resolve(1);
+        });
+        /*if(!(Reflect && Reflect.getOwnMetadata)){
             throw 'reflect-metadata shim is required when using class decorators';
         }
-        var mateData = Reflect.getOwnMetadata("annotations", clazz);
-        mateData = mateData.find(function (annotation) {
-            if (annotation.toString() === "@Component")
-                return annotation;
-        });
-        if (!mateData) {
+        let mateData = Reflect.getOwnMetadata("annotations", clazz);
+
+        mateData = mateData.find((annotation:any) => {
+            if(annotation.toString()==="@Component") return annotation;
+        })
+
+        if(!mateData){
             throw 'component type required a @Component decorator';
         }
-        mateData.selector = '.' + contentSelector;
-        /*pre load template*/
-        if (mateData.templateUrl) {
-            if (!this.tempCache[mateData.templateUrl]) {
-                return new Promise(function (resolve, reject) {
-                    var http = new XMLHttpRequest();
-                    http.onreadystatechange = function (xhr) {
-                        if (http.readyState === XMLHttpRequest.DONE) {
-                            if (http.status === 200) {
-                                _this.tempCache[mateData.templateUrl] = http.responseText;
+        mateData.selector = '.'+contentSelector;
+
+        /!*pre load template*!/
+        if(mateData.templateUrl){
+            if(!this.tempCache[mateData.templateUrl]){
+                return new Promise((resolve, reject)=>{
+                    let http = new XMLHttpRequest();
+                    http.onreadystatechange = (xhr)=>{
+                        if(http.readyState === XMLHttpRequest.DONE) {
+                            if(http.status === 200){
+                                this.tempCache[mateData.templateUrl] = http.responseText;
                                 mateData.template = http.responseText;
                                 delete mateData.templateUrl;
-                                resolve(core_1.Component(mateData)(clazz));
-                            }
-                            else {
-                                console.error("canot load template: " + mateData.templateUrl);
+                                resolve(Component(mateData)(clazz));
+                            } else {
+                                console.error("canot load template: "+mateData.templateUrl);
                                 reject();
                             }
                         }
-                    };
+                    }
                     http.open('GET', mateData.templateUrl, true);
                     http.send();
                 });
-            }
-            else {
-                return new Promise(function (resolve, reject) {
-                    mateData.template = _this.tempCache[mateData.templateUrl];
+            } else {
+                return new Promise((resolve, reject)=>{
+                    mateData.template = this.tempCache[mateData.templateUrl];
                     delete mateData.templateUrl;
-                    resolve(core_1.Component(mateData)(clazz));
+                    resolve(Component(mateData)(clazz));
                 });
             }
-        }
-        else {
-            return new Promise(function (resolve, reject) {
-                resolve(core_1.Component(mateData)(clazz));
+        } else {
+            return new Promise((resolve, reject)=>{
+                resolve(Component(mateData)(clazz));
             });
-        }
+        }*/
     };
     /**
      * for dialog only

@@ -5,7 +5,7 @@
  * @license Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
  * @author cnliangwei@foxmail.com
  */
-
+///<reference path="../../../node_modules/reflect-metadata/reflect-metadata.d.ts"/>"
 
 import {
     ApplicationRef,
@@ -284,7 +284,7 @@ export class NgLayer {
      * @return {NgLayerRef}
      */
     dialog(config:LayerConfig):NgLayerRef {
-        let layerId = "layer_"+new Date().getTime()
+        let layerId = "layer_"+new Date().getTime();
         return this.createComponent_(config, layerId);
     }
 
@@ -638,8 +638,10 @@ export class NgLayer {
      * preload template and change selector, for dialog only
      */
     private modifySelector_<T>(clazz:T, contentSelector:string) {
-        debugger;
-        if(!(Reflect && Reflect.getOwnMetadata)){
+        return new Promise((resolve, reject)=>{
+            resolve(1);
+        });
+        /*if(!(Reflect && Reflect.getOwnMetadata)){
             throw 'reflect-metadata shim is required when using class decorators';
         }
         let mateData = Reflect.getOwnMetadata("annotations", clazz);
@@ -653,7 +655,7 @@ export class NgLayer {
         }
         mateData.selector = '.'+contentSelector;
 
-        /*pre load template*/
+        /!*pre load template*!/
         if(mateData.templateUrl){
             if(!this.tempCache[mateData.templateUrl]){
                 return new Promise((resolve, reject)=>{
@@ -664,7 +666,6 @@ export class NgLayer {
                                 this.tempCache[mateData.templateUrl] = http.responseText;
                                 mateData.template = http.responseText;
                                 delete mateData.templateUrl;
-
                                 resolve(Component(mateData)(clazz));
                             } else {
                                 console.error("canot load template: "+mateData.templateUrl);
@@ -686,7 +687,7 @@ export class NgLayer {
             return new Promise((resolve, reject)=>{
                 resolve(Component(mateData)(clazz));
             });
-        }
+        }*/
     }
 
     /**

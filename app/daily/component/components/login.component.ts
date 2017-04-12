@@ -1,8 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewContainerRef} from "@angular/core";
 import {LoginService} from "../../service/loginService";
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import {CookieKey} from "../../const/cookieKey";
-import {NgLayer} from "../../../common/dialog/Dialog";
+import {NgLayer, NgLayerRef} from "../../../common/dialog/Dialog";
 /**
  * Created by Administrator on 2017/4/9.
  */
@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
 
     constructor(private loginService: LoginService,
                 private cookie: CookieService,
-                private ly: NgLayer) {
+                private ly: NgLayer,
+                private vcRef:ViewContainerRef) {
     }
 
     /**
@@ -58,15 +59,31 @@ export class LoginComponent implements OnInit {
                 //     title:'url is empty',
                 //     dialogComponent:'sss'
                 // });
-                let confirm = this.ly.confirm({
-                    message:"删除后无法恢复,确定删除吗?"
-                });
-                confirm
-                    .ok(()=> {return true;})
-                    .cancel(()=> {return true;});
-                // alert.ok(()=> {return true;});
             }
         } else {
+
+            @Component({template: "<link type='text/css' href='../../../common/dialog/dialog.css'><h2>Single Sign On</h2>"})
+            class DialogComponet {
+                name:string;
+
+                constructor(private ly:NgLayerRef){}
+
+                setTitle(){this.ly.setTitle("Angular2 Layer Title");}
+
+                close(){this.ly.close();}
+
+                showCloseBtn(){this.ly.showCloseBtn(true)};
+
+                showData(){alert(this.name)};
+            }
+
+            /*this.ly.dialog({
+                parent:this.vcRef,
+                dialogComponent:DialogComponet,
+                closeAble:true,
+                data:{name:"Angular2 Layer"}
+            });*/
+            this.ly.loading({message:"loading...",isModal:true});
             console.error(data.result);
         }
 
