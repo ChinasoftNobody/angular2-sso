@@ -34,7 +34,7 @@ var LoginComponent = (function () {
         }
     };
     /**
-     * 点击登录时间
+     * 点击登录事件
      */
     LoginComponent.prototype.login = function () {
         var _this = this;
@@ -57,37 +57,11 @@ var LoginComponent = (function () {
                 window.location.href = redirectToUrl;
             }
             else {
-                // this.ly.alert({
-                //     title:'url is empty',
-                //     dialogComponent:'sss'
-                // });
+                this.ly.alert({ message: "There is no redirectUrl found." });
             }
         }
         else {
-            var DialogComponet = (function () {
-                function DialogComponet(ly) {
-                    this.ly = ly;
-                }
-                DialogComponet.prototype.setTitle = function () { this.ly.setTitle("Angular2 Layer Title"); };
-                DialogComponet.prototype.close = function () { this.ly.close(); };
-                DialogComponet.prototype.showCloseBtn = function () { this.ly.showCloseBtn(true); };
-                ;
-                DialogComponet.prototype.showData = function () { alert(this.name); };
-                ;
-                return DialogComponet;
-            }());
-            DialogComponet = __decorate([
-                core_1.Component({ template: "<link type='text/css' href='../../../common/dialog/dialog.css'><h2>Single Sign On</h2>" }),
-                __metadata("design:paramtypes", [Dialog_1.NgLayerRef])
-            ], DialogComponet);
-            /*this.ly.dialog({
-                parent:this.vcRef,
-                dialogComponent:DialogComponet,
-                closeAble:true,
-                data:{name:"Angular2 Layer"}
-            });*/
-            this.ly.loading({ message: "loading...", isModal: true });
-            console.error(data.result);
+            this.ly.alert({ title: 'Error', message: "Login error." });
         }
     };
     return LoginComponent;

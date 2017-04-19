@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
     constructor(private loginService: LoginService,
                 private cookie: CookieService,
                 private ly: NgLayer,
-                private vcRef:ViewContainerRef) {
+                private vcRef: ViewContainerRef) {
     }
 
     /**
-     * 点击登录时间
+     * 点击登录事件
      */
     login() {
         this.userNameError = !(this.userName != '' && this.userName);
@@ -55,36 +55,10 @@ export class LoginComponent implements OnInit {
             if (redirectToUrl) {
                 window.location.href = redirectToUrl;
             } else {
-                // this.ly.alert({
-                //     title:'url is empty',
-                //     dialogComponent:'sss'
-                // });
+                this.ly.alert({message: "There is no redirectUrl found."})
             }
         } else {
-
-            @Component({template: "<link type='text/css' href='../../../common/dialog/dialog.css'><h2>Single Sign On</h2>"})
-            class DialogComponet {
-                name:string;
-
-                constructor(private ly:NgLayerRef){}
-
-                setTitle(){this.ly.setTitle("Angular2 Layer Title");}
-
-                close(){this.ly.close();}
-
-                showCloseBtn(){this.ly.showCloseBtn(true)};
-
-                showData(){alert(this.name)};
-            }
-
-            /*this.ly.dialog({
-                parent:this.vcRef,
-                dialogComponent:DialogComponet,
-                closeAble:true,
-                data:{name:"Angular2 Layer"}
-            });*/
-            this.ly.loading({message:"loading...",isModal:true});
-            console.error(data.result);
+            this.ly.alert({title: 'Error', message: "Login error."})
         }
 
     }
