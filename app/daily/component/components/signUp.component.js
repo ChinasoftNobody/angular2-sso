@@ -8,23 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 /**
- * Created by Administrator on 2017/4/9.
+ * Created by Administrator on 2017/4/20.
  */
-var HeaderComponent = (function () {
-    function HeaderComponent() {
+var SignUpComponent = (function () {
+    function SignUpComponent() {
     }
-    HeaderComponent.prototype.signUp = function () {
-    };
-    return HeaderComponent;
+    return SignUpComponent;
 }());
-HeaderComponent = __decorate([
+SignUpComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'sso-header',
-        templateUrl: '../views/header.html',
-        styleUrls: ['../styles/header.css'],
+        selector: 'sso-sign-up',
+        templateUrl: '../views/signUp.html',
+        styleUrls: [],
         providers: []
     })
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+], SignUpComponent);
+exports.SignUpComponent = SignUpComponent;
+//# sourceMappingURL=signUp.component.js.map

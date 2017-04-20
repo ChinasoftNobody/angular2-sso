@@ -1,2 +1,4 @@
-.header{  background-color: #292b2c;color: #ffffff; padding: 20px 40px 20px 40px; height: 10%}
-.header h2{  margin: 0;padding: 0; vertical-align: middle}
+.header{  background-color: #292b2c;color: #ffffff; padding: 2% 4%; height: 14%}
+.header>h2{  margin: 0;padding: 0; vertical-align: middle;width: 49%;display: inline-block;}
+.header>h3{  margin:0;padding:0;display: inline-block;width: 49%;text-align: right;}
+.header>h3>span{ text-decoration: underline;cursor: hand;}

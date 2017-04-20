@@ -9,6 +9,8 @@ import {Component} from "@angular/core";
     styleUrls: ['../styles/header.css'],
     providers: []
 })
-export class HeaderComponent{
+export class HeaderComponent {
 
+    signUp() {
+    }
 }

@@ -11,9 +11,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var signUp_component_1 = require("./daily/component/components/signUp.component");
 var main_component_1 = require("./daily/component/components/main.component");
 var routes = [
-    { path: '', component: main_component_1.MainComponent }
+    { path: '', component: main_component_1.MainComponent },
+    { path: 'signUp', component: signUp_component_1.SignUpComponent }
 ];
 var AppRouterModule = (function () {
     function AppRouterModule() {
