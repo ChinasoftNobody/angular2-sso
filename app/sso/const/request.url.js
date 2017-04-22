@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var serves = [
     {
         serveName: 'sso',
-        host: 'http://localhost:8080/sso',
+        host: 'http://192.168.1.7:8081/sso',
         urls: [
             {
                 name: 'login',
