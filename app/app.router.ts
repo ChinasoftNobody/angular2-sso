@@ -4,9 +4,10 @@
 import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SignUpComponent} from "./daily/component/components/signUp.component";
-import {MainComponent} from "./daily/component/components/main.component";
+import {LoginComponent} from "./daily/component/components/login.component";
 const routes: Routes = [
-    {path:'',component:MainComponent},
+    {path:'',component:LoginComponent},
+    {path:'signIn',redirectTo:''},
     {path: 'signUp', component: SignUpComponent}
 ];
 @NgModule({

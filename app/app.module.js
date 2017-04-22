@@ -33,7 +33,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_router_1.AppRouterModule, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent, login_component_1.LoginComponent, footer_component_1.FooterComponent, signUp_component_1.SignUpComponent],
         providers: [cookies_service_1.CookieService, RemoteService_1.RemoteService, requestUrl_1.RequestUrl],
-        bootstrap: [app_component_1.AppComponent, header_component_1.HeaderComponent, footer_component_1.FooterComponent]
+        bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;

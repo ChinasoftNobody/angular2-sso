@@ -12,7 +12,15 @@ var core_1 = require("@angular/core");
  */
 var SignUpComponent = (function () {
     function SignUpComponent() {
+        this.user = {
+            userName: '',
+            password: '',
+            email: ''
+        };
     }
+    SignUpComponent.prototype.signUp = function () {
+        console.log(this.user);
+    };
     return SignUpComponent;
 }());
 SignUpComponent = __decorate([

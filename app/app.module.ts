@@ -19,7 +19,7 @@ import {RequestUrl} from "./daily/const/requestUrl";
     imports: [BrowserModule, FormsModule, AppRouterModule, HttpModule],
     declarations: [AppComponent, MainComponent, HeaderComponent, LoginComponent, FooterComponent, SignUpComponent],
     providers: [CookieService, RemoteService, RequestUrl],
-    bootstrap: [AppComponent, HeaderComponent, FooterComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

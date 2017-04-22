@@ -9,6 +9,14 @@ import {Component} from "@angular/core";
     styleUrls: [],
     providers: []
 })
-export class SignUpComponent{
+export class SignUpComponent {
+    user: any = {
+        userName: '',
+        password: '',
+        email: ''
+    };
 
+    signUp() {
+        console.log(this.user);
+    }
 }
