@@ -22,32 +22,32 @@ import {
 
 export class LayerConfig {
     /**
-     * the new component will be a child of parent, if parent is null,
-     * new component will be a root component of application.
+     * the new busniess will be a child of parent, if parent is null,
+     * new busniess will be a root busniess of application.
      * valid only for dialog leyer
      */
     parent?:ViewContainerRef;
 
     /**
-     * a class for creating new component
+     * a class for creating new busniess
      * valid only for dialog leyer
      */
     dialogComponent?:any;
 
     /**
-     * if you want to use some custom directive in your dynamic component,
+     * if you want to use some custom directive in your dynamic busniess,
      * don't forget to declare
      */
     declarations?:Array<any>;
 
     /**
-     * if you want to use some custom directive in your dynamic component,
+     * if you want to use some custom directive in your dynamic busniess,
      * don't forget to import
      */
     imports?:Array<any>;
 
     /**
-     * datas pass to dialog component
+     * datas pass to dialog busniess
      */
     data?:any;
 
@@ -651,7 +651,7 @@ export class NgLayer {
         })
 
         if(!mateData){
-            throw 'component type required a @Component decorator';
+            throw 'busniess type required a @Component decorator';
         }
         mateData.selector = '.'+contentSelector;
 

@@ -499,7 +499,7 @@ var NgLayer = (function () {
         })
 
         if(!mateData){
-            throw 'component type required a @Component decorator';
+            throw 'busniess type required a @Component decorator';
         }
         mateData.selector = '.'+contentSelector;
 

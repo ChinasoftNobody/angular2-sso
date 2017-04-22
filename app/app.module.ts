@@ -3,18 +3,18 @@
  */
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {AppComponent}   from './daily/component/components/app.component';
+import {AppComponent}   from './sso/busniess/components/app.component';
 import {FormsModule}   from '@angular/forms';
 import {AppRouterModule} from "./app.router";
-import {MainComponent} from "./daily/component/components/main.component";
+import {MainComponent} from "./sso/busniess/components/main.component";
 import {HttpModule} from "@angular/http";
-import {HeaderComponent} from "./daily/component/components/header.component";
-import {LoginComponent} from "./daily/component/components/login.component";
-import {FooterComponent} from "./daily/component/components/footer.component";
+import {HeaderComponent} from "./sso/busniess/components/header.component";
+import {LoginComponent} from "./sso/busniess/components/login.component";
+import {FooterComponent} from "./sso/busniess/components/footer.component";
 import {CookieService} from 'angular2-cookie/services/cookies.service';
-import {RemoteService} from "./daily/service/RemoteService";
-import {SignUpComponent} from "./daily/component/components/signUp.component";
-import {RequestUrl} from "./daily/const/requestUrl";
+import {RemoteService} from "./sso/service/remote.service";
+import {SignUpComponent} from "./sso/busniess/components/signUp.component";
+import {RequestUrl} from "./sso/const/request.url";
 @NgModule({
     imports: [BrowserModule, FormsModule, AppRouterModule, HttpModule],
     declarations: [AppComponent, MainComponent, HeaderComponent, LoginComponent, FooterComponent, SignUpComponent],

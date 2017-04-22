@@ -11,8 +11,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var signUp_component_1 = require("./daily/component/components/signUp.component");
-var login_component_1 = require("./daily/component/components/login.component");
+var signUp_component_1 = require("./sso/busniess/components/signUp.component");
+var login_component_1 = require("./sso/busniess/components/login.component");
 var routes = [
     { path: '', component: login_component_1.LoginComponent },
     { path: 'signIn', redirectTo: '' },

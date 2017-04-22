@@ -3,8 +3,8 @@
  */
 import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SignUpComponent} from "./daily/component/components/signUp.component";
-import {LoginComponent} from "./daily/component/components/login.component";
+import {SignUpComponent} from "./sso/busniess/components/signUp.component";
+import {LoginComponent} from "./sso/busniess/components/login.component";
 const routes: Routes = [
     {path:'',component:LoginComponent},
     {path:'signIn',redirectTo:''},

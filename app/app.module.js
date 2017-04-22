@@ -11,18 +11,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./daily/component/components/app.component");
+var app_component_1 = require("./sso/busniess/components/app.component");
 var forms_1 = require("@angular/forms");
 var app_router_1 = require("./app.router");
-var main_component_1 = require("./daily/component/components/main.component");
+var main_component_1 = require("./sso/busniess/components/main.component");
 var http_1 = require("@angular/http");
-var header_component_1 = require("./daily/component/components/header.component");
-var login_component_1 = require("./daily/component/components/login.component");
-var footer_component_1 = require("./daily/component/components/footer.component");
+var header_component_1 = require("./sso/busniess/components/header.component");
+var login_component_1 = require("./sso/busniess/components/login.component");
+var footer_component_1 = require("./sso/busniess/components/footer.component");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
-var RemoteService_1 = require("./daily/service/RemoteService");
-var signUp_component_1 = require("./daily/component/components/signUp.component");
-var requestUrl_1 = require("./daily/const/requestUrl");
+var remote_service_1 = require("./sso/service/remote.service");
+var signUp_component_1 = require("./sso/busniess/components/signUp.component");
+var request_url_1 = require("./sso/const/request.url");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,7 +32,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_router_1.AppRouterModule, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent, login_component_1.LoginComponent, footer_component_1.FooterComponent, signUp_component_1.SignUpComponent],
-        providers: [cookies_service_1.CookieService, RemoteService_1.RemoteService, requestUrl_1.RequestUrl],
+        providers: [cookies_service_1.CookieService, remote_service_1.RemoteService, request_url_1.RequestUrl],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
