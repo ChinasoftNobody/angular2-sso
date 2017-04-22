@@ -23,6 +23,7 @@ var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var remote_service_1 = require("./sso/service/remote.service");
 var signUp_component_1 = require("./sso/busniess/components/signUp.component");
 var request_url_1 = require("./sso/const/request.url");
+var Dialog_1 = require("./common/dialog/Dialog");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,7 +33,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_router_1.AppRouterModule, http_1.HttpModule],
         declarations: [app_component_1.AppComponent, main_component_1.MainComponent, header_component_1.HeaderComponent, login_component_1.LoginComponent, footer_component_1.FooterComponent, signUp_component_1.SignUpComponent],
-        providers: [cookies_service_1.CookieService, remote_service_1.RemoteService, request_url_1.RequestUrl],
+        providers: [cookies_service_1.CookieService, remote_service_1.RemoteService, request_url_1.RequestUrl, Dialog_1.NgLayer],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

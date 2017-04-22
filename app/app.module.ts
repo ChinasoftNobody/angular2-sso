@@ -15,10 +15,11 @@ import {CookieService} from 'angular2-cookie/services/cookies.service';
 import {RemoteService} from "./sso/service/remote.service";
 import {SignUpComponent} from "./sso/busniess/components/signUp.component";
 import {RequestUrl} from "./sso/const/request.url";
+import {NgLayer} from "./common/dialog/Dialog";
 @NgModule({
     imports: [BrowserModule, FormsModule, AppRouterModule, HttpModule],
     declarations: [AppComponent, MainComponent, HeaderComponent, LoginComponent, FooterComponent, SignUpComponent],
-    providers: [CookieService, RemoteService, RequestUrl],
+    providers: [CookieService, RemoteService, RequestUrl, NgLayer],
     bootstrap: [AppComponent]
 })
 export class AppModule {

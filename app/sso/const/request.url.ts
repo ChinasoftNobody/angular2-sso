@@ -1,26 +1,16 @@
 import {RemoteServe} from "../bean/remote.serve";
-import {Url} from "../bean/url";
-const urls :Url[] = [
-    {
-        name:'login',
-        path:'http://localhost:8080/sso/login/'
-    },
-    {
-        name:'',
-        path:''
-    }
-];
 const serves: RemoteServe[] = [
     {
         serveName: 'sso',
+        host:'http://localhost:8080/sso',
         urls: [
             {
                 name: 'login',
-                path: 'http://localhost:8080/sso/login/'
+                path: '/login/'
             },
             {
-                name: '',
-                path: ''
+                name: 'addUser',
+                path: '/user/add'
             }
         ]
     }
@@ -28,6 +18,6 @@ const serves: RemoteServe[] = [
 export class RequestUrl {
     getByName(serveName: string, interfaceName: string): string {
         let serve:RemoteServe = serves.find((value, index, obj) => value.serveName == serveName);
-        return serve.urls.find((value, index, obj) => value.name == interfaceName).path;
+        return serve.host + serve.urls.find((value, index, obj) => value.name == interfaceName).path;
     }
 }

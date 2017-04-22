@@ -14,15 +14,19 @@ var login_service_1 = require("../../service/login.service");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var cookie_key_1 = require("../../const/cookie.key");
 var Dialog_1 = require("../../../common/dialog/Dialog");
+var sign_contact_service_1 = require("../../service/sign.contact.service");
 /**
  * Created by Administrator on 2017/4/9.
  */
 var LoginComponent = (function () {
-    function LoginComponent(loginService, cookie, ly, vcRef) {
+    function LoginComponent(loginService, cookie, ly, vcRef, signContact) {
         this.loginService = loginService;
         this.cookie = cookie;
         this.ly = ly;
         this.vcRef = vcRef;
+        this.signContact = signContact;
+        this.userName = this.signContact.user.name;
+        this.password = this.signContact.user.password;
         this.userNameError = false;
         this.passwordError = false;
     }
@@ -65,12 +69,12 @@ LoginComponent = __decorate([
         selector: 'sso-login',
         templateUrl: '../views/login.html',
         styleUrls: ['../styles/login.css'],
-        providers: [login_service_1.LoginService, Dialog_1.NgLayer]
+        providers: [login_service_1.LoginService, Dialog_1.NgLayer, sign_contact_service_1.SignContactService]
     }),
     __metadata("design:paramtypes", [login_service_1.LoginService,
         cookies_service_1.CookieService,
         Dialog_1.NgLayer,
-        core_1.ViewContainerRef])
+        core_1.ViewContainerRef, sign_contact_service_1.SignContactService])
 ], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

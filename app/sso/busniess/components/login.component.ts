@@ -3,6 +3,7 @@ import {LoginService} from "../../service/login.service";
 import {CookieService} from "angular2-cookie/services/cookies.service";
 import {CookieKey} from "../../const/cookie.key";
 import {NgLayer, NgLayerRef} from "../../../common/dialog/Dialog";
+import {SignContactService} from "../../service/sign.contact.service";
 /**
  * Created by Administrator on 2017/4/9.
  */
@@ -11,20 +12,20 @@ import {NgLayer, NgLayerRef} from "../../../common/dialog/Dialog";
     selector: 'sso-login',
     templateUrl: '../views/login.html',
     styleUrls: ['../styles/login.css'],
-    providers: [LoginService, NgLayer]
+    providers: [LoginService, NgLayer, SignContactService]
 })
 export class LoginComponent {
-
-    userName;
-    password;
-    userNameError = false;
-    passwordError = false;
 
     constructor(private loginService: LoginService,
                 private cookie: CookieService,
                 private ly: NgLayer,
-                private vcRef: ViewContainerRef) {
+                private vcRef: ViewContainerRef, private signContact: SignContactService) {
     }
+
+    userName = this.signContact.user.name;
+    password = this.signContact.user.password;
+    userNameError = false;
+    passwordError = false;
 
     /**
      * 点击登录事件

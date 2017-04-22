@@ -5,5 +5,6 @@ import {Url} from "./url";
 
 export class RemoteServe{
     serveName:string;
+    host:string;
     urls:Url[];
 }

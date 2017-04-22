@@ -1,26 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var urls = [
-    {
-        name: 'login',
-        path: 'http://localhost:8080/sso/login/'
-    },
-    {
-        name: '',
-        path: ''
-    }
-];
 var serves = [
     {
         serveName: 'sso',
+        host: 'http://localhost:8080/sso',
         urls: [
             {
                 name: 'login',
-                path: 'http://localhost:8080/sso/login/'
+                path: '/login/'
             },
             {
-                name: '',
-                path: ''
+                name: 'addUser',
+                path: '/user/add'
             }
         ]
     }
@@ -30,7 +21,7 @@ var RequestUrl = (function () {
     }
     RequestUrl.prototype.getByName = function (serveName, interfaceName) {
         var serve = serves.find(function (value, index, obj) { return value.serveName == serveName; });
-        return serve.urls.find(function (value, index, obj) { return value.name == interfaceName; }).path;
+        return serve.host + serve.urls.find(function (value, index, obj) { return value.name == interfaceName; }).path;
     };
     return RequestUrl;
 }());

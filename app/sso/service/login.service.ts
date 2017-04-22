@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {RemoteService} from "./remote.service";
 import {RequestUrl} from "../const/request.url";
+import {SignContactService} from "./sign.contact.service";
 /**
  * Created by Administrator on 2017/3/29.
  */
