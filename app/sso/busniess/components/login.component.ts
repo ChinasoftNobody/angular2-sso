@@ -55,6 +55,5 @@ export class LoginComponent {
         } else {
             this.ly.alert({title: 'Error', message: "Login error."})
         }
-
     }
 }
